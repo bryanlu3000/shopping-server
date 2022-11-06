@@ -66,6 +66,10 @@ app.use(express.urlencoded({ extended: false })); // Use body parser for POST an
 app.use(express.json()); //Enable to parse JSON in req.body
 app.use(cookieParser()); // Middleware for cookies
 
+app.get("/", (req, res) => {
+  res.send("Express on Vercel");
+});
+
 //////////////////////////////////////////////////////////////////////////////
 // Middleware to verify JWT accessToken
 const verifyJWT = (req: Request, res: Response, next: NextFunction) => {

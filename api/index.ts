@@ -67,11 +67,6 @@ app.use(express.json()); //Enable to parse JSON in req.body
 app.use(cookieParser()); // Middleware for cookies
 
 //////////////////////////////////////////////////////////////////////////////
-app.get("/api", (req, res) => {
-  res.send("Express on Vercel!! Hello World!!");
-});
-
-//////////////////////////////////////////////////////////////////////////////
 // Middleware to verify JWT accessToken
 const verifyJWT = (req: Request, res: Response, next: NextFunction) => {
   const authHeader = req.headers["authorization"];

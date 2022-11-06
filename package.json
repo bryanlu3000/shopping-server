@@ -2,9 +2,9 @@
   "name": "shopping-server",
   "version": "1.0.0",
   "description": "",
-  "main": "server.ts",
+  "main": "./api/index.ts",
   "scripts": {
-    "start": "nodemon ./server.ts",
+    "start": "nodemon ./api/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

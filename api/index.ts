@@ -385,3 +385,5 @@ app.put("/api/items/rating/:id", verifyJWT, async (req, res) => {
     return res.json("Errors! Try again later.");
   }
 });
+
+module.exports = app;

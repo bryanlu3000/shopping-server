@@ -38,7 +38,7 @@ app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
 const allowedOrigins = [
   "http://localhost:5173",
   "http://127.0.0.1:5173",
-  "https://shopping-frontend-gilt.vercel.app",
+  "https://shopping-frontend-gilt.vercel.app/*",
 ];
 
 const corsOptions: cors.CorsOptions = {

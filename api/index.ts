@@ -61,7 +61,7 @@ const credentials = (req: Request, res: Response, next: NextFunction) => {
 };
 
 app.use(credentials); // Must before CORS! Handle options credentials check and fetch cookies credentials requirement.
-// app.use(cors(corsOptions)); // Cross Origin Resource Sharing
+app.use(cors(corsOptions)); // Cross Origin Resource Sharing
 app.use(express.urlencoded({ extended: false })); // Use body parser for POST and PUT request
 app.use(express.json()); //Enable to parse JSON in req.body
 app.use(cookieParser()); // Middleware for cookies

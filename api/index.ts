@@ -38,7 +38,7 @@ app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
 const allowedOrigins = [
   "http://localhost:5173",
   "http://127.0.0.1:5173",
-  "https://shopping-frontend-gilt.vercel.app/*",
+  "https://shopping-frontend-gilt.vercel.app",
 ];
 
 const corsOptions: cors.CorsOptions = {
@@ -61,7 +61,7 @@ const credentials = (req: Request, res: Response, next: NextFunction) => {
 };
 
 app.use(credentials); // Must before CORS! Handle options credentials check and fetch cookies credentials requirement.
-app.use(cors(corsOptions)); // Cross Origin Resource Sharing
+// app.use(cors(corsOptions)); // Cross Origin Resource Sharing
 app.use(express.urlencoded({ extended: false })); // Use body parser for POST and PUT request
 app.use(express.json()); //Enable to parse JSON in req.body
 app.use(cookieParser()); // Middleware for cookies

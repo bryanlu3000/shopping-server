@@ -289,6 +289,7 @@ app.get("/api/items", async (req, res) => {
     category: string;
     name: {
       $regex: string;
+      $options: string;
     };
   }
 
@@ -308,7 +309,7 @@ app.get("/api/items", async (req, res) => {
 
     // If nameQuery exists in the query from the frontend and is not empty
     if (nameQuery && nameQuery !== "") {
-      query.name = { $regex: nameQuery as string };
+      query.name = { $regex: nameQuery as string, $options: "i" };
     }
 
     const result = await itemsCollection
